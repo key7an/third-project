@@ -5,13 +5,13 @@ import { BsTwitter } from "react-icons/bs";
 
 const NotificationsFeed = () => {
   const { data: currentUser, mutate: mutateCurrentUser } = useCurrentUser();
-  const { data: fetchedNotifications } = useNotifications(currentUser?.id);
+  const { data: fetchedNotifications = [] } = useNotifications(currentUser?.id);
 
   useEffect(() => {
     mutateCurrentUser();
   }, [mutateCurrentUser]);
 
-  if (fetchedNotifications.length === 0) {
+  if (fetchedNotifications?.length === 0) {
     return (
       <div className="text-neutral-600 text-center p-6 text-xl">
         No Notifications
