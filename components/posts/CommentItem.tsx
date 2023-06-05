@@ -46,6 +46,7 @@ const CommentItem: React.FC<CommentItemProps> = ({ data = {} }) => {
               {data?.user.name}
             </p>
             <span
+              onClick={goToUser}
               className="text-neutral-500 cursor-pointer hover:underline
             hidden md:block"
             >
