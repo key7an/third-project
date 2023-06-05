@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import { useCallback, useMemo } from 'react';
-import { useRouter } from 'next/router';
-import { formatDistanceToNowStrict } from 'date-fns';
-import { AiOutlineHeart, AiOutlineMessage, AiFillHeart } from 'react-icons/ai';
-
-import useCurrentUser from '@/hooks/useCurrentUser';
-import useLoginModal from '@/hooks/useLoginModal';
-import Avatar from '../Avatar';
-import useLike from '@/hooks/useLike';
-=======
 import { useCallback, useMemo } from "react";
 import { useRouter } from "next/router";
 import { formatDistanceToNowStrict } from "date-fns";
@@ -18,7 +7,6 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import useLoginModal from "@/hooks/useLoginModal";
 import Avatar from "../Avatar";
 import useLike from "@/hooks/useLike";
->>>>>>> 82a5541 (checking)
 
 interface PostItemProps {
   data: Record<string, any>;
@@ -64,11 +52,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
     }
 
     return formatDistanceToNowStrict(new Date(data.createAt));
-<<<<<<< HEAD
-  }, [data?.createdAt]);
-=======
   }, [data?.createAt]);
->>>>>>> 82a5541 (checking)
 
   const LikeIcon = hasLiked ? AiFillHeart : AiOutlineHeart;
 
@@ -115,11 +99,8 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                 cursor-pointer transition hover:text-red-500
             "
             >
-<<<<<<< HEAD
-              <LikeIcon size={20} color={hasLiked ? 'red' : ''} />
-=======
               <LikeIcon size={20} color={hasLiked ? "red" : ""} />
->>>>>>> 82a5541 (checking)
+
               <p>{data?.likedIds.length}</p>
             </div>
           </div>

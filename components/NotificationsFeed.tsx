@@ -24,13 +24,8 @@ const NotificationsFeed = () => {
       {fetchedNotifications.map((notification: Record<string, any>) => {
         <div
           key={notification.id}
-<<<<<<< HEAD
-          className="flex flex-row items-center
-        p-6 gap-4 border-b-[1px] border-neutral-800 "
-=======
           className="flex flex-row items-center p-6
          gap-4 border-b-[1px] border-neutral-800 "
->>>>>>> 82a5541 (checking)
         >
           <BsTwitter color="white" size={32} />
           <p className="text-white">{notification.body}</p>
