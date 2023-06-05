@@ -23,6 +23,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       },
     });
 
+<<<<<<< HEAD
+=======
+    console.log(notifications);
+
+>>>>>>> 82a5541 (checking)
     await prisma.user.update({
       where: {
         id: userId,

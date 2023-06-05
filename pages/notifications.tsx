@@ -20,7 +20,11 @@ export async function getServerSideProps(context: NextPageContext) {
   };
 }
 
+<<<<<<< HEAD
 const notifications = () => {
+=======
+const Notifications = () => {
+>>>>>>> 82a5541 (checking)
   return (
     <>
       <Header label="Notifications" showBackArrow />
@@ -29,4 +33,8 @@ const notifications = () => {
   );
 };
 
+<<<<<<< HEAD
 export default notifications;
+=======
+export default Notifications;
+>>>>>>> 82a5541 (checking)
