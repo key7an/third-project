@@ -27,7 +27,6 @@ export default async function handler(
         postId,
       },
     });
-    console.log(comment);
 
     try {
       const post = await prisma.post.findUnique({

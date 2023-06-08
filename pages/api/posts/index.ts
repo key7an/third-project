@@ -1,20 +1,20 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from "next";
 
-import serverAuth from '@/libs/serverAuth';
-import prisma from '@/libs/prismadb';
+import serverAuth from "@/libs/serverAuth";
+import prisma from "@/libs/prismadb";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== 'POST' && req.method !== 'GET') {
+  if (req.method !== "POST" && req.method !== "GET") {
     return res.status(405).end();
   }
 
   try {
-    if (req.method === 'POST') {
+    if (req.method === "POST") {
       const { currentUser } = await serverAuth(req, res);
-      const { body } = req.body; // this is prisma body extracted from prisma.Post
+      const { body } = req.body;
 
       const post = await prisma.post.create({
         data: {
@@ -26,12 +26,14 @@ export default async function handler(
       return res.status(200).json(post);
     }
 
-    if (req.method === 'GET') {
+    if (req.method === "GET") {
       const { userId } = req.query;
+
+      console.log(`api/posts/index = userId : ${userId}`);
 
       let posts;
 
-      if (userId && typeof userId === 'string') {
+      if (userId && typeof userId === "string") {
         posts = await prisma.post.findMany({
           where: {
             userId,
@@ -41,7 +43,7 @@ export default async function handler(
             comments: true,
           },
           orderBy: {
-            createAt: 'desc',
+            createAt: "desc",
           },
         });
       } else {
@@ -51,7 +53,7 @@ export default async function handler(
             comments: true,
           },
           orderBy: {
-            createAt: 'desc',
+            createAt: "desc",
           },
         });
       }
