@@ -21,8 +21,6 @@ const PostView = () => {
     );
   }
 
-  console.log(fetchedPost);
-
   return (
     <>
       <Header label="Tweet" showBackArrow />

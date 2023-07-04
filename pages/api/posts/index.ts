@@ -29,8 +29,6 @@ export default async function handler(
     if (req.method === "GET") {
       const { userId } = req.query;
 
-      console.log(`api/posts/index = userId : ${userId}`);
-
       let posts;
 
       if (userId && typeof userId === "string") {
